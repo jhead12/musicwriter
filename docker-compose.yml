@@ -1,0 +1,31 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: node server.js
+
+    depends_on:
+      - mysql
+      - mongodb
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+      - 10088:10081
+  mongodb:
+    image: tutum/mongodb
+    ports:
+      - 27017:27017
+      - 28017:28017
+  mysql:
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=jhead12
+      - MYSQL_PASSWORD=1282940Matrix#@
+    ports:
+      - 3306:3306

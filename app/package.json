@@ -1,0 +1,19 @@
+{
+  "name": "songwriter",
+  "version": "0.0.1",
+  "description": "A state of the art songwriters toolbox for songwriters",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "knex": "^0.10.0",
+    "mysql": "^2.10.2",
+    "nodemon": "^1.9.1",
+    "angular2": "2.0.0-beta.17"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
