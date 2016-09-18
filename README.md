@@ -8,7 +8,7 @@ after you download the tools type the following command in terminal.
 
 - docker-compose up
 
-Then open up http://localhost:3000 in the browser.
+Then open up http://localhost in the browser.
 
 Any edits to the App/ folder will automatically update in the browser.
 
