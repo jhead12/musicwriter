@@ -4,28 +4,36 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: node server.js
-
+    command: ./node_modules/.bin/nodemon server.js
     depends_on:
       - mysql
-      - mongodb
     volumes:
       - ./app:/app
       - /app/node_modules
     ports:
-      - 3000:3000
-      - 80:8000
-  mongodb:
-    image: tutum/mongodb
-    ports:
-      - 27017:27017
-      - 28017:28017
+      - 80:3000
+  # mongodb:
+  #   image: tutum/mongodb
+  #   ports:
+  #     - 27017:27017
   mysql:
     image: mysql:5.5
     environment:
       - MYSQL_ROOT_PASSWORD=test
-      - MYSQL_DATABASE=wordpress
+      - MYSQL_DATABASE=app
       - MYSQL_USER=jhead12
-      - MYSQL_PASSWORD=test2
+      - MYSQL_PASSWORD=test
     ports:
-      - 3306:3306
+      - 3306:33061
+  # migrations:
+  #   image: jhead12/test-db-migrations
+  #   environment:
+  #     - NODE_ENV=devlopment
+  #   depends_on:
+  #     - mysql
+  # fixtures:
+  #   images: jhead12/test-db-fixtures:latest
+  #   environment:
+  #     - NODE_ENV=development
+  #   depends_on:
+  #     - mysql
