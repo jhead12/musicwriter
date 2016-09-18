@@ -16,6 +16,11 @@ services:
   #   image: tutum/mongodb
   #   ports:
   #     - 27017:27017
+  mongodb:
+    image: tutum/mongodb
+    ports:
+      - 27017:27017
+      - 28017:28017
   mysql:
     image: mysql:5.5
     environment:
@@ -24,7 +29,7 @@ services:
       - MYSQL_USER=jhead12
       - MYSQL_PASSWORD=test
     ports:
-      - 3306:33061
+      - 3306:3306
   # migrations:
   #   image: jhead12/test-db-migrations
   #   environment:
