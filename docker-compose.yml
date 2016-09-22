@@ -37,19 +37,23 @@ services:
     image: mysql:5.5
     environment:
       - MYSQL_ROOT_PASSWORD=test
-      - MYSQL_DATABASE=app
-      - MYSQL_USER=jhead12
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
       - MYSQL_PASSWORD=test
     ports:
       - 3306:3306
-  # migrations:
-  #   image: jhead12/test-db-migrations
-  #   environment:
-  #     - NODE_ENV=devlopment
-  #   depends_on:
-  #     - mysql
+  migrations:
+    build:
+      context: db-migrations
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - mysql
   # fixtures:
-  #   images: jhead12/test-db-fixtures:latest
+  #   build:
+  #     context: db-fixtures
+  #     dockerfile: Dockerfile
   #   environment:
   #     - NODE_ENV=development
   #   depends_on:

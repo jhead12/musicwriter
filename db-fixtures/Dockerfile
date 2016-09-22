@@ -10,5 +10,5 @@ RUN npm install
 # add the rest of the files
 ADD . /app
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 CMD ["./node_modules/.bin/knex", "seed:run"]

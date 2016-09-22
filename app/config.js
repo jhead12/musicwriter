@@ -14,9 +14,9 @@ switch(process.env.NODE_ENV) {
     module.exports = {
       client: "mysql",
       connection: {
-        database: "app",
+        database: "test",
         host:     "mysql",
-        user:     "jhead12",
+        user:     "test",
         password: "test",
       },
     };

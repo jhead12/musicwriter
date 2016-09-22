@@ -1,5 +1,5 @@
 {
-  "name": "songwriter",
+  "name": "musicwriter",
   "version": "0.0.1",
   "description": "A state of the art songwriters toolbox for songwriters",
   "main": "server.js",
