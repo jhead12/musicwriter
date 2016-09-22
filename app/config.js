@@ -16,7 +16,7 @@ switch(process.env.NODE_ENV) {
       connection: {
         database: "app",
         host:     "mysql",
-        user:     "root",
+        user:     "jhead12",
         password: "test",
       },
     };
