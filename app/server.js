@@ -7,7 +7,7 @@ express()
     db("users").then(function(data) {
       res.send(data);
     });
-    // res.send('hello world');
+    //  res.send('hello world');
  })
  .listen(3000, function(err) {
     if (err) {
